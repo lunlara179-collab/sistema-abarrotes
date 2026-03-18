@@ -8,4 +8,5 @@
 <input type="date" name="fecha" required>
 <button>Guardar</button>
 </form>
-</body></html>
+</body>
+</html>
