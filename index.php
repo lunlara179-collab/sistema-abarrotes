@@ -1,28 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Inicio</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <title>Sistema Gerencial</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f, #3b82f6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #3b82f6;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e3a5f;
+        }
+    </style>
+
 </head>
 <body>
 
-<header>
-    <h1>Sistema de Abarrotes</h1>
-</header>
+<div class="login-box">
+    <h1>SIG - El Progreso</h1>
+    <p>Bienvenido</p>
 
-<nav>
-    <a href="ventas.html">Ventas</a>
-    <a href="compras.html">Compras</a>
-    <a href="gastos.html">Gastos</a>
-    <a href="usuarios.html">Usuarios</a>
-    <a href="dashboard.html">Dashboard</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>Bienvenido</h2>
-        <p>Sistema de información gerencial</p>
-    </div>
+    <form>
+        <input type="text" placeholder="Usuario"><br><br>
+        <input type="password" placeholder="Contraseña"><br><br>
+        <button>Ingresar</button>
+    </form>
 </div>
 
 </body>
