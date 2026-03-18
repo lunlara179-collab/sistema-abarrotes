@@ -1,22 +1,25 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>SIG - El Progreso</title>
 <style>
-body{margin:0;font-family:'Segoe UI',Arial;background:linear-gradient(135deg,#e0f2fe,#f8fafc);height:100vh;display:flex;justify-content:center;align-items:center}
-.login-box{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);padding:35px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.1);text-align:center;width:340px}
-h1{color:#1e3a5f;margin-bottom:5px}
-p{color:#64748b;font-size:14px;margin-bottom:20px}
-.input-group{margin-bottom:15px;text-align:left}
-input{width:100%;padding:10px;border-radius:8px;border:1px solid #cbd5e1;outline:none;transition:.3s}
-input:focus{border-color:#3b82f6;box-shadow:0 0 5px rgba(59,130,246,.3)}
-button{width:100%;padding:12px;background:linear-gradient(90deg,#3b82f6,#06b6d4);border:none;color:#fff;border-radius:8px;font-size:15px;cursor:pointer;transition:.3s}
-button:hover{transform:scale(1.03);box-shadow:0 5px 15px rgba(59,130,246,.3)}
+body{margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(120deg,#0f172a,#1e293b,#0ea5e9);height:100vh;display:flex;justify-content:center;align-items:center}
+.login-box{background:rgba(15,23,42,.85);padding:40px;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.4);width:350px;color:#fff;text-align:center}
+h1{margin:0;font-weight:600;letter-spacing:1px}
+p{color:#cbd5f5;font-size:14px;margin:10px 0 25px}
+.input-group{margin:15px 0;text-align:left}
+input{width:100%;padding:12px;border:none;border-radius:10px;background:#1e293b;color:#fff;outline:none}
+input::placeholder{color:#94a3b8}
+input:focus{box-shadow:0 0 8px #0ea5e9}
+button{width:100%;padding:12px;border:none;border-radius:10px;background:linear-gradient(90deg,#0ea5e9,#38bdf8);color:#fff;font-weight:600;cursor:pointer;transition:.3s}
+button:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(14,165,233,.4)}
+.logo{font-size:22px;margin-bottom:10px;color:#38bdf8}
 </style></head>
 <body>
 <div class="login-box">
-<h1>SIG</h1>
-<p>Distribuidora "El Progreso"</p>
+<div class="logo">SIG</div>
+<h1>El Progreso</h1>
+<p>Sistema de gestión financiera</p>
 <form action="dashboard.php" method="POST">
-<div class="input-group"><input type="text" name="usuario" placeholder="👤 Usuario" required></div>
-<div class="input-group"><input type="password" name="password" placeholder="🔒 Contraseña" required></div>
+<div class="input-group"><input type="text" name="usuario" placeholder="Usuario" required></div>
+<div class="input-group"><input type="password" name="password" placeholder="Contraseña" required></div>
 <button>Ingresar</button>
 </form>
 </div>
