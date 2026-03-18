@@ -1,25 +1,23 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>SIG - El Progreso</title>
 <style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#1e3a5f,#3b82f6);height:100vh;display:flex;justify-content:center;align-items:center}
-.login-box{background:#fff;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.2);text-align:center;width:320px}
-h1{color:#1e3a5f;margin:0 0 10px}
-p{color:#555;font-size:14px;margin-bottom:20px}
-.input-group{text-align:left;margin-bottom:15px}
-label{font-size:14px;font-weight:bold}
-input{width:100%;padding:8px;margin-top:5px;border:1px solid #ccc;border-radius:6px;outline:none}
-input:focus{border-color:#3b82f6}
-button{width:100%;padding:10px;background:#3b82f6;border:none;color:#fff;border-radius:6px;font-size:15px;cursor:pointer;transition:.3s}
-button:hover{background:#1e3a5f}
-</style>
-</head>
+body{margin:0;font-family:'Segoe UI',Arial;background:linear-gradient(135deg,#e0f2fe,#f8fafc);height:100vh;display:flex;justify-content:center;align-items:center}
+.login-box{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);padding:35px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.1);text-align:center;width:340px}
+h1{color:#1e3a5f;margin-bottom:5px}
+p{color:#64748b;font-size:14px;margin-bottom:20px}
+.input-group{margin-bottom:15px;text-align:left}
+input{width:100%;padding:10px;border-radius:8px;border:1px solid #cbd5e1;outline:none;transition:.3s}
+input:focus{border-color:#3b82f6;box-shadow:0 0 5px rgba(59,130,246,.3)}
+button{width:100%;padding:12px;background:linear-gradient(90deg,#3b82f6,#06b6d4);border:none;color:#fff;border-radius:8px;font-size:15px;cursor:pointer;transition:.3s}
+button:hover{transform:scale(1.03);box-shadow:0 5px 15px rgba(59,130,246,.3)}
+</style></head>
 <body>
 <div class="login-box">
-<h1>SIG - El Progreso</h1>
-<p>Gestión financiera inteligente</p>
+<h1>SIG</h1>
+<p>Distribuidora "El Progreso"</p>
 <form action="dashboard.php" method="POST">
-<div class="input-group"><label>Usuario</label><input type="text" name="usuario" required></div>
-<div class="input-group"><label>Contraseña</label><input type="password" name="password" required></div>
-<button type="submit">Ingresar</button>
+<div class="input-group"><input type="text" name="usuario" placeholder="👤 Usuario" required></div>
+<div class="input-group"><input type="password" name="password" placeholder="🔒 Contraseña" required></div>
+<button>Ingresar</button>
 </form>
 </div>
 </body></html>
