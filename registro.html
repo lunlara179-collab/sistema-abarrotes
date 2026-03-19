@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuarios</title>
+    <style>
+        body{
+            font-family: Arial;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container{
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        a{
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Registro</h2>
+
+    <form action="guardar_usuario.php" method="POST">
+
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <select name="rol" required>
+            <option value="">Selecciona un rol</option>
+            <option value="Gerente">Gerente Financiero</option>
+            <option value="Contador">Contador</option>
+            <option value="Supervisor">Supervisor de Ventas</option>
+        </select>
+
+        <button type="submit">Registrarse</button>
+
+    </form>
+
+    <a href="index.html">Volver al inicio</a>
+</div>
+
+</body>
+</html>
