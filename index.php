@@ -86,3 +86,41 @@
 
     .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
 </style>
+<div class="sidebar">
+    <h2>SIG El Progreso</h2>
+    <a href="#" class="active">🏠 Inicio</a>
+    <a href="#">📦 Ventas</a>
+    <a href="#">🛒 Compras</a>
+    <a href="#">📝 Gastos</a>
+    <a href="#">👥 Usuarios</a>
+    <a href="#">📊 Reportes</a>
+</div>
+
+<div class="main-content">
+    <div class="header-title">
+        <h1>Resumen Gerencial</h1>
+        <p>Bienvenido al control financiero de Distribuidora El Progreso.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="card" style="border-left: 5px solid #81c784;">
+            <small>Ingresos Mensuales</small>
+            <h2 style="color: #2e7d32;">$0.00</h2>
+        </div>
+        <div class="card" style="border-left: 5px solid #e57373;">
+            <small>Egresos Mensuales</small>
+            <h2 style="color: #c62828;">$0.00</h2>
+        </div>
+        <div class="card" style="border-left: 5px solid #64b5f6;">
+            <small>Flujo de Efectivo</small>
+            <h2 style="color: #1565c0;">$0.00</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Evolución de Ventas vs Gastos</h3>
+        <div style="height: 200px; background: #f9f9f9; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+            <p style="color: #999;">[Gráfico Dinámico - Módulo de Visualización]</p>
+        </div>
+    </div>
+</div>
