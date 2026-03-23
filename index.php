@@ -20,7 +20,16 @@
             <p style="font-size: 0.85rem;">Registro de productos, cantidad y precios.</p>
             <button class="btn-main" style="padding: 10px;">Ir a Ventas</button>
         </div>
+<!DOCTYPE html>
+<html>
+<body>
 
+<h1>Sistema Abarrotes</h1>
+
+<a href="ventas/formulario.php">Ir a Ventas</a>
+
+</body>
+</html>
         <div class="glass-card" style="text-align: center; padding: 25px;">
             <div style="font-size: 2rem; margin-bottom: 10px;">🛒</div>
             <h3>Compras</h3>
