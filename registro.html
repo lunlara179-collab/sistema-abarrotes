@@ -1,35 +1,28 @@
 <div class="sidebar">
-    <h2>SIG El Progreso</h2>
-    <a href="#">🏠 Inicio</a>
-    <a href="#">📦 Ventas</a>
-    <a href="#">🛒 Compras</a>
-    <a href="#">📝 Gastos</a>
-    <a href="#" class="active">👥 Usuarios</a>
-    <a href="#">📊 Reportes</a>
+    <h2>SIG "El Progreso"</h2>
+    <a href="index.html" class="nav-link">🏠 Panel de Control</a>
+    <a href="usuarios.html" class="nav-link active">👥 Gestión de Personal</a>
 </div>
 
-<div class="main-content">
-    <div class="header-title">
-        <h1>Gestión de Personal</h1>
-        <p>Registre y asigne roles a los nuevos colaboradores del sistema.</p>
-    </div>
-
-    <div class="card" style="max-width: 600px;">
-        <h3>Nuevo Registro de Usuario</h3>
-        <form action="procesar_registro.php" method="POST">
-            <div class="form-group">
-                <label>Nombre Completo</label>
-                <input type="text" name="nombre" placeholder="Ej. Jaquelin Jennifer" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Correo Electrónico</label>
-                <input type="email" name="email" placeholder="usuario@uaemex.mx" required>
+<div class="container">
+    <div class="glass-card">
+        <h2 style="color: var(--btn-color); margin-top: 0;">Registro de Personal Autorizado</h2>
+        <p>Complete los datos para otorgar acceso según el rol correspondiente.</p>
+        
+        <form action="db_save_user.php" method="POST" class="form-grid">
+            <div class="full-width">
+                <label>Nombre del Colaborador</label>
+                <input type="text" name="usuario_nombre" placeholder="Nombre completo" required>
             </div>
 
-            <div class="form-group">
-                <label>Rol en el Sistema</label>
-                <select name="rol" required>
+            <div>
+                <label>Correo Institucional</label>
+                <input type="email" name="usuario_email" placeholder="ejemplo@uaemex.mx" required>
+            </div>
+
+            <div>
+                <label>Rol Asignado (Módulo de Permisos)</label>
+                <select name="usuario_rol" required>
                     <option value="">Seleccione un rol...</option>
                     <option value="gerente">Gerente Financiero</option>
                     <option value="contador">Contador</option>
@@ -37,12 +30,19 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>Contraseña Temporal</label>
-                <input type="password" name="password" required>
+            <div class="full-width">
+                <label>Contraseña de Acceso</label>
+                <input type="password" name="usuario_pass" placeholder="Mínimo 8 caracteres" required>
             </div>
 
-            <button type="submit" class="btn-submit">Registrar Personal Autorizado</button>
+            <div class="full-width" style="margin-top: 10px;">
+                <label>Notas Adicionales</label>
+                <textarea rows="3" placeholder="Departamento o área específica..."></textarea>
+            </div>
+
+            <div class="full-width">
+                <button type="submit" class="btn-main">Finalizar Registro de Usuario</button>
+            </div>
         </form>
     </div>
 </div>
