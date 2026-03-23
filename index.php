@@ -1,126 +1,133 @@
+<div class="sidebar">
+    <h2>SIG "El Progreso"</h2>
+    <p style="font-size: 0.8rem; margin-bottom: 30px;">Sprint 1: Captura de Datos</p>
+    <a href="index.html" class="nav-link active">🏠 Panel de Control</a>
+    <a href="usuarios.html" class="nav-link">👥 Gestión de Personal</a>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+    <a href="#" class="nav-link">📦 Registrar Venta</a>
+    <a href="#" class="nav-link">🛒 Registrar Compra</a>
+    <a href="#" class="nav-link">💸 Registrar Gasto</a>
+</div>
+
+<div class="container">
+    <h1 style="color: #37474f;">Panel de Entradas</h1>
+    <p>Seleccione la operación que desea centralizar hoy.</p>
+
+    <div class="form-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 40px;">
+        <div class="glass-card" style="text-align: center; padding: 25px;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">📦</div>
+            <h3>Ventas</h3>
+            <p style="font-size: 0.85rem;">Registro de productos, cantidad y precios.</p>
+            <button class="btn-main" style="padding: 10px;">Ir a Ventas</button>
+        </div>
+
+        <div class="glass-card" style="text-align: center; padding: 25px;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🛒</div>
+            <h3>Compras</h3>
+            <p style="font-size: 0.85rem;">Entrada de mercancía de proveedores.</p>
+            <button class="btn-main" style="padding: 10px;">Ir a Compras</button>
+        </div>
+
+        <div class="glass-card" style="text-align: center; padding: 25px;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">💸</div>
+            <h3>Gastos</h3>
+            <p style="font-size: 0.85rem;">Control de egresos operativos y servicios.</p>
+            <button class="btn-main" style="padding: 10px;">Ir a Gastos</button>
+        </div>
+    </div>
+</div>
 <style>
     :root {
-        --primary-pastel: #e3f2fd; /* Azul pastel suave */
-        --accent-color: #5c6bc0;  /* Azul profesional */
-        --text-dark: #37474f;
-        --bg-light: #f5f7fa;
-        --white: #ffffff;
+        --bg-pastel: #f0f4f8; /* Azul grisáceo muy tenue */
+        --card-bg: #ffffff;
+        --accent-soft: #b2ebf2; /* Cian pastel */
+        --primary-text: #455a64;
+        --input-focus: #80deea;
+        --btn-color: #00acc1;
     }
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-dark);
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--bg-pastel);
+        color: var(--primary-text);
         margin: 0;
         display: flex;
+        min-height: 100vh;
     }
 
-    /* Sidebar Navegación */
+    /* Sidebar Estilizada */
     .sidebar {
-        width: 250px;
-        background-color: var(--white);
-        height: 100vh;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-        padding: 20px;
-        position: fixed;
+        width: 260px;
+        background: white;
+        box-shadow: 4px 0 10px rgba(0,0,0,0.05);
+        padding: 30px 20px;
     }
 
-    .sidebar h2 { color: var(--accent-color); font-size: 1.2rem; margin-bottom: 30px; }
-    
-    .sidebar a {
+    .sidebar h2 { font-size: 1.1rem; color: var(--btn-color); text-transform: uppercase; letter-spacing: 1px; }
+
+    .nav-link {
         display: block;
-        padding: 12px;
-        color: var(--text-dark);
+        padding: 15px;
+        margin: 8px 0;
+        color: var(--primary-text);
         text-decoration: none;
-        border-radius: 8px;
-        margin-bottom: 10px;
+        border-radius: 12px;
         transition: 0.3s;
     }
 
-    .sidebar a:hover, .sidebar a.active {
-        background-color: var(--primary-pastel);
-        color: var(--accent-color);
-        font-weight: bold;
+    .nav-link:hover, .nav-link.active {
+        background: var(--accent-soft);
+        color: #006064;
+        font-weight: 600;
     }
 
-    /* Contenido Principal */
-    .main-content {
-        margin-left: 280px;
+    /* Contenedor de Formularios */
+    .container { padding: 50px; flex-grow: 1; }
+    
+    .glass-card {
+        background: var(--card-bg);
         padding: 40px;
-        width: calc(100% - 320px);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        max-width: 800px;
+        border: 1px solid rgba(255,255,255,0.8);
     }
 
-    .header-title { margin-bottom: 30px; }
-    .header-title h1 { font-size: 2rem; color: var(--accent-color); }
-
-    /* Tarjetas y Contenedores */
-    .card {
-        background: var(--white);
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        margin-bottom: 20px;
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
-    /* Formularios */
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; font-weight: 600; }
-    input, select {
+    .full-width { grid-column: span 2; }
+
+    label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+
+    input, select, textarea {
         width: 100%;
         padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fafafa;
+        border: 2px solid #e1e8ed;
+        border-radius: 10px;
+        background: #fdfdfd;
+        transition: 0.3s;
+        box-sizing: border-box;
     }
 
-    .btn-submit {
-        background-color: var(--accent-color);
+    input:focus { border-color: var(--input-focus); outline: none; box-shadow: 0 0 8px rgba(128, 222, 234, 0.4); }
+
+    .btn-main {
+        background: var(--btn-color);
         color: white;
         border: none;
-        padding: 12px 25px;
-        border-radius: 8px;
+        padding: 15px 30px;
+        border-radius: 10px;
         cursor: pointer;
+        font-weight: bold;
         font-size: 1rem;
+        margin-top: 20px;
+        width: 100%;
         transition: 0.3s;
     }
 
-    .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-main:hover { background: #00838f; transform: translateY(-2px); }
 </style>
-<div class="sidebar">
-    <h2>SIG El Progreso</h2>
-    <a href="#" class="active">🏠 Inicio</a>
-    <a href="#">📦 Ventas</a>
-    <a href="#">🛒 Compras</a>
-    <a href="#">📝 Gastos</a>
-    <a href="#">👥 Usuarios</a>
-    <a href="#">📊 Reportes</a>
-</div>
-
-<div class="main-content">
-    <div class="header-title">
-        <h1>Resumen Gerencial</h1>
-        <p>Bienvenido al control financiero de Distribuidora El Progreso.</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div class="card" style="border-left: 5px solid #81c784;">
-            <small>Ingresos Mensuales</small>
-            <h2 style="color: #2e7d32;">$0.00</h2>
-        </div>
-        <div class="card" style="border-left: 5px solid #e57373;">
-            <small>Egresos Mensuales</small>
-            <h2 style="color: #c62828;">$0.00</h2>
-        </div>
-        <div class="card" style="border-left: 5px solid #64b5f6;">
-            <small>Flujo de Efectivo</small>
-            <h2 style="color: #1565c0;">$0.00</h2>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Evolución de Ventas vs Gastos</h3>
-        <div style="height: 200px; background: #f9f9f9; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-            <p style="color: #999;">[Gráfico Dinámico - Módulo de Visualización]</p>
-        </div>
-    </div>
-</div>
