@@ -1,107 +1,88 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema "El Progreso" | Gestión Gerencial</title>
-    <style>
-        :root {
-            --blanco-elegante: #fdfdfd;
-            --dorado-luz: #d4af37;
-            --sombra-suave: rgba(0, 0, 0, 0.05);
-            --efecto-brillo: rgba(212, 175, 55, 0.2);
-        }
+<style>
+    :root {
+        --primary-pastel: #e3f2fd; /* Azul pastel suave */
+        --accent-color: #5c6bc0;  /* Azul profesional */
+        --text-dark: #37474f;
+        --bg-light: #f5f7fa;
+        --white: #ffffff;
+    }
 
-        body {
-            background-color: var(--blanco-elegante);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        margin: 0;
+        display: flex;
+    }
 
-        header {
-            text-align: center;
-            padding: 40px;
-            color: #444;
-        }
+    /* Sidebar Navegación */
+    .sidebar {
+        width: 250px;
+        background-color: var(--white);
+        height: 100vh;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        padding: 20px;
+        position: fixed;
+    }
 
-        /* Contenedor de Luces y Tarjetas */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            width: 80%;
-            padding: 20px;
-        }
+    .sidebar h2 { color: var(--accent-color); font-size: 1.2rem; margin-bottom: 30px; }
+    
+    .sidebar a {
+        display: block;
+        padding: 12px;
+        color: var(--text-dark);
+        text-decoration: none;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 20px var(--sombra-suave);
-            transition: all 0.4s ease;
-            border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            text-decoration: none;
-            color: #333;
-        }
+    .sidebar a:hover, .sidebar a.active {
+        background-color: var(--primary-pastel);
+        color: var(--accent-color);
+        font-weight: bold;
+    }
 
-        /* Efecto de Luz al pasar el mouse */
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px var(--efecto-brillo);
-            border-color: var(--dorado-luz);
-        }
+    /* Contenido Principal */
+    .main-content {
+        margin-left: 280px;
+        padding: 40px;
+        width: calc(100% - 320px);
+    }
 
-        .card h3 {
-            margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
+    .header-title { margin-bottom: 30px; }
+    .header-title h1 { font-size: 2rem; color: var(--accent-color); }
 
-        .icon-circle {
-            width: 60px;
-            height: 60px;
-            background: #fafafa;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            line-height: 60px;
-            font-size: 24px;
-            border: 1px solid #eee;
-        }
-    </style>
-</head>
-<body>
+    /* Tarjetas y Contenedores */
+    .card {
+        background: var(--white);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        margin-bottom: 20px;
+    }
 
-<header>
-    <h1>Distribuidora "El Progreso"</h1>
-    <p>Sistema de Información Gerencial</p>
-</header>
+    /* Formularios */
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: 600; }
+    input, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fafafa;
+    }
 
-<div class="container">
-    <a href="registro_operaciones.php" class="card">
-        <div class="icon-circle">✍️</div>
-        <h3>Registros</h3>
-        <p>Ventas, Compras y Gastos</p>
-    </a>
+    .btn-submit {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
 
-    <a href="tablero.php" class="card">
-        <div class="icon-circle">📊</div>
-        <h3>Dashboards</h3>
-        <p>Visualización de Indicadores</p>
-    </a>
-
-    <a href="reportes.php" class="card">
-        <div class="icon-circle">📄</div>
-        <h3>Reportes</h3>
-        <p>Exportar PDF y Excel</p>
-    </a>
-</div>
-
-</body>
-</html>
+    .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+</style>
