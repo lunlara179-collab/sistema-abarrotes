@@ -1,7 +1,8 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "sig");
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=localhost;dbname=sig", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>
