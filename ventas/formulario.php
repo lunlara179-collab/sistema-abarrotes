@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Registrar Venta</title>
-</head>
 <body>
 
 <h2>Registrar Venta</h2>
