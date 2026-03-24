@@ -4,21 +4,13 @@ include("../config/conexion.php");
 $producto = $_POST['producto'];
 $cantidad = $_POST['cantidad'];
 $precio = $_POST['precio'];
-$fecha = $_POST['fecha'];
 
-$sql = "INSERT INTO ventas (producto, cantidad, precio, fecha)
-VALUES (:producto, :cantidad, :precio, :fecha)";
+$sql = "INSERT INTO ventas (producto, cantidad, precio)
+        VALUES ('$producto', '$cantidad', '$precio')";
 
-$stmt = $conn->prepare($sql);
-
-$stmt->bindParam(':producto', $producto);
-$stmt->bindParam(':cantidad', $cantidad);
-$stmt->bindParam(':precio', $precio);
-$stmt->bindParam(':fecha', $fecha);
-
-if ($stmt->execute()) {
-    echo "Guardado correctamente";
+if ($conn->query($sql) === TRUE) {
+    echo "Venta guardada correctamente";
 } else {
-    echo "Error al guardar";
+    echo "Error: " . $conn->error;
 }
 ?>
