@@ -12,7 +12,9 @@
     Cantidad: <input type="number" name="cantidad"><br><br>
     Precio: <input type="number" step="0.01" name="precio"><br><br>
 
-    <button type="submit">Guardar</button>
+   <a href="ventas/registrar.php">
+    <button class="btn-main">Ir a Ventas</button>
+</a>
 </form>
 
 </body>
