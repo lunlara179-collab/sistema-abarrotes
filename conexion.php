@@ -1,15 +1,20 @@
 <?php
-// conexion.php
 
-// __DIR__ obtiene la ruta de la carpeta donde reside ESTE archivo (conexion.php)
-// Asumiendo que conexion.php está en la raíz del proyecto:
-$rutaBaseDeDatos = __DIR__ . '/abarrotes.db';
+// Database connection using absolute paths
+$db_host = 'localhost';
+$db_user = 'username';
+$db_pass = 'password';
+$db_name = 'database';
+
+// Use absolute path for the database file
+$absolute_path = '/absolute/path/to/database/file.db';
 
 try {
-    $pdo = new PDO("sqlite:" . $rutaBaseDeDatos);
-    // Configurar para que lance excepciones en caso de error
+    $pdo = new PDO("sqlite:" . $absolute_path);
+    // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+    echo "Connection failed: " . $e->getMessage();
 }
+
 ?>
