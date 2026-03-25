@@ -1,18 +1,10 @@
 <?php
-// conexion.php - Versión mejorada con rutas absolutas
-
-// Obtener la ruta raíz del proyecto (donde están index.php y conexion.php)
-$rutaRaiz = dirname(__FILE__);
-$rutaBaseDatos = $rutaRaiz . '/abarrotes.db';
-
-// Debug: Mostrar la ruta (solo durante desarrollo)
-error_log("Ruta de base de datos: " . $rutaBaseDatos);
+// En XAMPP, __DIR__ apuntará a C:\xampp\htdocs\sistema-abarrotes
+$ruta = __DIR__ . '/abarrotes.db';
 
 try {
-    $pdo = new PDO("sqlite:" . $rutaBaseDatos);
-    // Configurar para que lance excepciones en caso de error
+    $pdo = new PDO("sqlite:" . $ruta);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Error de conexión a la base de datos: " . $e->getMessage());
+    die("Error: " . $e->getMessage());
 }
-?>
