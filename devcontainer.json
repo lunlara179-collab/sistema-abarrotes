@@ -1,0 +1,12 @@
+{
+  "name": "Proyecto SQLite",
+  "image": "mcr.microsoft.com/devcontainers/php:0-8.2",
+  "postCreateCommand": "apt update && apt install -y sqlite3",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "alexcvzz.vscode-sqlite"
+      ]
+    }
+  }
+}
