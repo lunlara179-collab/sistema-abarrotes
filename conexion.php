@@ -12,7 +12,7 @@
 	
 	if(!mysqli_connect_errno()) {
 		echo "Conexi贸n exitosa.<br/>"
-		return $conn;
+		return $conexion(sql);
 	} else {
 		//echo "error en la conexi贸n: " . mysqli_connect_errno() . "<br/>";
 		echo "error en la conexión: " . mysqli_connect_errno() . "<br/>";
