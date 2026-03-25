@@ -1,16 +1,21 @@
 <?php
-include("../config/conexion.php");
+include 'conexion.php';
 
-$producto = $_POST['producto'];
-$cantidad = $_POST['cantidad'];
-$precio = $_POST['precio'];
+if ($_POST) {
+    $producto = $_POST['producto'];
+    $cantidad = $_POST['cantidad'];
+    $precio = $_POST['precio'];
 
-$sql = "INSERT INTO ventas (producto, cantidad, precio)
-        VALUES ('$producto', '$cantidad', '$precio')";
+    $sql = "INSERT INTO ventas (producto, cantidad, precio)
+            VALUES (:producto, :cantidad, :precio)";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Venta guardada correctamente";
-} else {
-    echo "Error: " . $conn->error;
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':producto', $producto);
+    $stmt->bindParam(':cantidad', $cantidad);
+    $stmt->bindParam(':precio', $precio);
+
+    $stmt->execute();
+
+    header("Location: index.php");
 }
 ?>
