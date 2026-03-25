@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include '../conexion.php';
 
 $producto = $_POST['producto'];
@@ -17,4 +20,5 @@ $stmt->execute();
 
 // Redirige a ver ventas
 header("Location: ver.php");
+exit();
 ?>
