@@ -1,6 +1,6 @@
 <?php
 try {
-    $ruta = __DIR__ . "/data/abarrotes.db";
+    $ruta = __DIR__ . "/abarrotes.db"; // 👈 AQUÍ ESTÁ LA CLAVE
 
     $conn = new PDO("sqlite:$ruta");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
