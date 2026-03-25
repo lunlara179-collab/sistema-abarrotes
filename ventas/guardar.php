@@ -7,7 +7,8 @@ include '../conexion.php';
 $producto = $_POST['producto'];
 $cantidad = $_POST['cantidad'];
 $precio = $_POST['precio'];
-
+$conn = $conexion(sql);
+$ress =$conexion->query(sql);      
 $sql = "INSERT INTO ventas (producto, cantidad, precio)
         VALUES (:producto, :cantidad, :precio)";
 
