@@ -1,10 +1,21 @@
-<?php
-// En XAMPP, __DIR__ apuntará a C:\xampp\htdocs\sistema-abarrotes
-$ruta = __DIR__ . '/abarrotes.db';
+<?php 
 
-try {
-    $pdo = new PDO("sqlite:" . $ruta);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error: " . $e->getMessage());
+	define("SERVIDOR", "localhost");
+	define("BASE_DATOS", "ihaeminf_ihaemapp");
+	define("USUARIO", "root");
+	define("CLAVE", "");
+	define("PUERTO", "");
+
+	function conexion(){
+
+	$conn = new mysqli(SERVIDOR,USUARIO,CLAVE,BASE_DATOS);
+	
+	if(!mysqli_connect_errno()) {
+		echo "Conexi贸n exitosa.<br/>"
+		return $conn;
+	} else {
+		//echo "error en la conexi贸n: " . mysqli_connect_errno() . "<br/>";
+		echo "error en la conexión: " . mysqli_connect_errno() . "<br/>";
+	}
 }
+?>
